@@ -1,12 +1,10 @@
-# :package_description
+# A Symfony bundle for Ray
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_name/:package_name.svg?style=flat-square)](https://packagist.org/packages/:vendor_name/:package_name)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/:vendor_name/:package_name/Tests?label=tests)](https://github.com/:vendor_name/:package_name/actions?query=workflow%3ATests+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/:vendor_name/:package_name.svg?style=flat-square)](https://packagist.org/packages/:vendor_name/:package_name)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/ray-bundle.svg?style=flat-square)](https://packagist.org/packages/spatie/ray-bundle)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/ray-bundle/Tests?label=tests)](https://github.com/spatie/ray-bundle/actions?query=workflow%3ATests+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/spatie/ray-bundle.svg?style=flat-square)](https://packagist.org/packages/spatie/ray-bundle)
 
-**Note:** Run `./configure-skeleton` to get started, or manually replace ```:author_name``` ```:author_username``` ```:author_email``` ```:vendor_name``` ```:package_name``` ```:package_description``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](.github/CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. 
-
-This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
+This package can be installed in a Symfony application to send messages to the Ray app.
 
 ## Support us
 
@@ -21,13 +19,13 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require :vendor_name/:package_name
+composer require spatie/ray-bundle
 ```
 
 ## Usage
 
 ```php
-$skeleton = new Spatie\Skeleton();
+$skeleton = new Spatie\RayBundle();
 echo $skeleton->echoPhrase('Hello, Spatie!');
 ```
 
@@ -51,7 +49,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [Niels Vanpachtenbeke](https://github.com/Nielsvanpach)
 - [All Contributors](../../contributors)
 
 ## License
