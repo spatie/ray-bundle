@@ -4,8 +4,6 @@ namespace Spatie\RayBundle\Tests;
 
 use Psr\Log\LoggerInterface;
 use Spatie\Ray\Settings\Settings;
-use Spatie\RayBundle\Tests\TestClasses\TestEvent;
-use Spatie\RayBundle\Tests\TestClasses\User;
 use Spatie\Snapshots\MatchesSnapshots;
 use Symfony\Component\HttpKernel\Log\Logger;
 
