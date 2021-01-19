@@ -116,13 +116,6 @@ class Ray extends BaseRay
         return $this->queryLogger;
     }
 
-    /**
-     * @param \Spatie\Ray\Payloads\Payload|\Spatie\Ray\Payloads\Payload[] $payloads
-     * @param array $meta
-     *
-     * @return \Spatie\Ray\Ray
-     * @throws \Exception
-     */
     public function sendRequest($payloads, array $meta = []): BaseRay
     {
         if (! static::$enabled) {
