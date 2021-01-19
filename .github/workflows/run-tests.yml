@@ -10,9 +10,15 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         php: [8.0, 7.4]
+        symfony: [5.*, 4.4]
         stability: [prefer-lowest, prefer-stable]
+        include:
+          - php: '7.4'
+            symfony: 5.0.*
+          - php: '8.0'
+            symfony: 5.2.*
 
-    name: P${{ matrix.php }} - ${{ matrix.stability }} - ${{ matrix.os }}
+    name: P${{ matrix.php }} - S${{ matrix.symfony }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
     steps:
       - name: Checkout code
@@ -24,14 +30,16 @@ jobs:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
           coverage: none
-          
+
       - name: Setup problem matchers
         run: |
           echo "::add-matcher::${{ runner.tool_cache }}/php.json"
           echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
       - name: Install dependencies
-        run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+        run: |
+          composer global require --no-progress --no-scripts --no-plugins symfony/flex ${{ matrix.symfony }}
+          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
       - name: Execute tests
         run: vendor/bin/phpunit
