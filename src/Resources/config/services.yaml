@@ -1,0 +1,9 @@
+services:
+  Spatie\Ray\Settings\Settings:
+    factory: ['Spatie\Ray\Settings\SettingsFactory', 'createFromConfigFile']
+    arguments:
+      - '%kernel.project_dir%'
+
+  Spatie\RayBundle\Ray:
+    arguments:
+      - 'Spatie\Ray\Settings\Settings'
