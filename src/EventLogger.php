@@ -2,9 +2,18 @@
 
 namespace Spatie\RayBundle;
 
+use Spatie\RayBundle\Payloads\EventPayload;
+
 class EventLogger
 {
     protected bool $enabled = false;
+
+    private Ray $ray;
+
+    public function __construct(Ray $ray)
+    {
+        $this->ray = $ray;
+    }
 
     public function enable(): self
     {
@@ -26,9 +35,9 @@ class EventLogger
             return;
         }
 
-        /**$payload = new EventPayload($eventName, $arguments);
+        $payload = new EventPayload($eventName, $arguments);
 
-        app(Ray::class)->sendRequest($payload);*/
+        $this->ray->sendRequest($payload);
     }
 
     public function isLoggingEvents(): bool

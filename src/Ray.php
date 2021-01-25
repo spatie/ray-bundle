@@ -18,7 +18,7 @@ class Ray extends BaseRay
 
     public function __construct(Settings $settings, Client $client = null, string $uuid = null)
     {
-        $this->eventLogger = new EventLogger();
+        $this->eventLogger = new EventLogger($this);
         $this->queryLogger = new QueryLogger();
 
         parent::__construct($settings, $client, $uuid);

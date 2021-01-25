@@ -5,7 +5,6 @@ namespace Spatie\RayBundle\DependencyInjection;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
-
 class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder(): TreeBuilder
@@ -46,11 +45,8 @@ class Configuration implements ConfigurationInterface
                     ->defaultValue(null)
                     ->info("Absolute base path for your sites or projects on your local computer where your IDE or code editor is running on.")
                 ->end()
-
-
             ->end();
 
         return $treeBuilder;
     }
-
 }

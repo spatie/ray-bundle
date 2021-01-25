@@ -25,7 +25,6 @@ class SpatieRayExtension extends Extension
         $definition->replaceArgument(4, $config['port']);
         $definition->replaceArgument(5, $config['remote_path']);
         $definition->replaceArgument(6, $config['local_path']);
-
     }
 
     public function getNamespace(): string
