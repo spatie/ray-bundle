@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns="http://spatie.be/schema/dic/ray"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://spatie.be/schema/dic/ray"
+            elementFormDefault="qualified">
+
+    <xsd:element name="config" type="config" />
+
+    <xsd:complexType name="config">
+        <xsd:attribute name="enable" type="xsd:boolean" />
+        <xsd:attribute name="send_log_calls_to_ray" type="xsd:boolean" />
+        <xsd:attribute name="send_dumps_to_ray" type="xsd:boolean" />
+        <xsd:attribute name="host" type="xsd:string" />
+        <xsd:attribute name="port" type="xsd:integer" />
+        <xsd:attribute name="remote_path" type="xsd:string" />
+        <xsd:attribute name="local_path" type="xsd:string" />
+    </xsd:complexType>
+</xsd:schema>
