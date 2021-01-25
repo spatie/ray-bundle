@@ -3,7 +3,6 @@
 namespace Spatie\RayBundle\Tests;
 
 use Psr\Log\LoggerInterface;
-use Spatie\Ray\Settings\Settings;
 use Spatie\Snapshots\MatchesSnapshots;
 use Symfony\Component\HttpKernel\Log\Logger;
 
@@ -23,7 +22,7 @@ class RayTest extends TestCase
     /** @test */
     public function when_disabled_nothing_will_be_sent_to_ray()
     {
-        //app(Settings::class)->enable = false;
+        ray()->settings->enabled = false;
 
         ray('test');
 

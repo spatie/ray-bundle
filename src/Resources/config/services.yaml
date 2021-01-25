@@ -2,7 +2,7 @@ services:
   Spatie\Ray\Settings\Settings:
     factory: ['Spatie\Ray\Settings\SettingsFactory', 'createFromConfigFile']
     arguments:
-      - '%kernel.project_dir%'
+      - '%kernel.project_dir%/Resources/config'
 
   Spatie\RayBundle\Ray:
     arguments:
