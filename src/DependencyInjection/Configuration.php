@@ -9,7 +9,7 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder('spatie.ray');
+        $treeBuilder = new TreeBuilder('spatie_ray');
 
         $treeBuilder->getRootNode()
             ->children()

@@ -17,7 +17,7 @@ class SpatieRayExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $definition = $container->getDefinition('spatie.ray');
+        $definition = $container->getDefinition('spatie_ray');
         $definition->replaceArgument(0, $config['enable']);
         $definition->replaceArgument(1, $config['send_log_calls_to_ray']);
         $definition->replaceArgument(2, $config['send_dumps_to_ray']);
