@@ -12,6 +12,7 @@
             <argument/>
             <argument/>
             <argument/>
+            <argument/>
         </service>
     </services>
 </container>
