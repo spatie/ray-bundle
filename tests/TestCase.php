@@ -2,10 +2,10 @@
 
 namespace Spatie\RayBundle\Tests;
 
-use \PHPUnit\Framework\TestCase as BaseTestCase;
 use Spatie\RayBundle\Tests\TestClasses\FakeClient;
+use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
-class TestCase extends BaseTestCase
+class TestCase extends KernelTestCase
 {
     protected FakeClient $client;
 
@@ -14,5 +14,7 @@ class TestCase extends BaseTestCase
         parent::setUp();
 
         $this->client = new FakeClient();
+
+        self::bootKernel();
     }
 }
