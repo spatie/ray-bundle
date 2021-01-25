@@ -4,12 +4,13 @@ namespace Spatie\RayBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
+use Spatie\RayBundle\Ray;
 
 class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder('spatie_ray');
+        $treeBuilder = new TreeBuilder(Ray::class);
 
         $treeBuilder->getRootNode()
             ->children()

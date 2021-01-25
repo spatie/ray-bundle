@@ -7,6 +7,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Spatie\RayBundle\Ray;
 
 class SpatieRayExtension extends Extension
 {
@@ -23,7 +24,7 @@ class SpatieRayExtension extends Extension
 
         $container->setParameter('ray.settings', $config);
 
-        $container->getDefinition('spatie_ray');
+        $container->getDefinition(Ray::class);
     }
 
     public function getNamespace(): string
