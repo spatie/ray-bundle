@@ -5,6 +5,7 @@
         https://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
+        <service id="Spatie\Ray\Settings\Settings" alias="spatie.ray.settings"/>
         <service id="spatie.ray.settings" class="Spatie\Ray\Settings\Settings">
             <argument type="collection" id="ray.settings"/>
         </service>
