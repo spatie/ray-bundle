@@ -10,7 +10,8 @@ use Symfony\Component\HttpKernel\Kernel;
 
 class Ray extends BaseRay
 {
-    public static bool $enabled = true;
+    /** @var bool */
+    public static $enabled = true;
 
     private EventLogger $eventLogger;
 
