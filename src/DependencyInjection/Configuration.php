@@ -2,7 +2,6 @@
 
 namespace Spatie\RayBundle\DependencyInjection;
 
-use Spatie\RayBundle\Ray;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
