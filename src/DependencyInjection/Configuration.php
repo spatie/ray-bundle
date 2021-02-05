@@ -10,9 +10,10 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder(Ray::class);
+        $treeBuilder = new TreeBuilder('spatie_ray');
 
         $treeBuilder->getRootNode()
+            ->addDefaultsIfNotSet()
             ->children()
                 ->booleanNode('enable')
                     ->defaultTrue()

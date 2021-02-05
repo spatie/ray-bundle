@@ -27,6 +27,7 @@
         "doctrine/orm": "^2.8",
         "friendsofphp/php-cs-fixer": "^2.17",
         "matthiasnoback/symfony-dependency-injection-test": "^4.2",
+        "nyholm/symfony-bundle-test": "^1.7",
         "phpunit/phpunit": "^9.5",
         "psalm/plugin-symfony": "^2.1",
         "spatie/phpunit-snapshot-assertions": "^4.2",

@@ -2,7 +2,9 @@
 
 namespace Spatie\RayBundle\Tests;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
+use Spatie\RayBundle\Tests\TestClasses\User;
 use Spatie\Snapshots\MatchesSnapshots;
 use Symfony\Component\HttpKernel\Log\Logger;
 
@@ -12,16 +14,23 @@ class RayTest extends TestCase
 
     private LoggerInterface $logger;
 
+    private ?EntityManagerInterface $entityManager = null;
+
     public function setUp(): void
     {
         $this->logger = new Logger();
 
         parent::setUp();
+
+        $kernel = self::bootKernel();
+
+        $this->entityManager = $kernel->getContainer()->get('doctrine')->getManager();
     }
 
     /** @test */
     public function when_disabled_nothing_will_be_sent_to_ray()
     {
+        $this->entityManager->getRepository(User::class)->find(1);
         ray()->settings->enabled = false;
 
         ray('test');
@@ -250,5 +259,14 @@ class RayTest extends TestCase
     public function it_can_send_a_regular_test_response_to_ray()
     {
         $this->markTestSkipped("TO DO");
+    }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+
+        // doing this is recommended to avoid memory leaks
+        $this->entityManager->close();
+        $this->entityManager = null;
     }
 }

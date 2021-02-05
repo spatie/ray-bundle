@@ -1,0 +1,7 @@
+spatie_ray:
+  enable: false
+  send_log_calls_to_ray: false
+  send_dumps_to_ray: false
+  host: 'different'
+  port: 1
+

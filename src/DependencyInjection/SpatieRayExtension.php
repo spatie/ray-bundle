@@ -22,7 +22,7 @@ class SpatieRayExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('ray.settings', $config);
+        $container->setParameter('spatie_ray.settings', $config);
 
         $container->getDefinition(Ray::class);
     }
