@@ -10,43 +10,22 @@ use Symfony\Component\HttpKernel\Kernel;
 
 class Ray extends BaseRay
 {
-    /** @var bool */
-    public static $enabled = true;
-
     private EventLogger $eventLogger;
 
     private QueryLogger $queryLogger;
 
     public function __construct(Settings $settings, Client $client = null, string $uuid = null)
     {
+        // persist the enabled setting across multiple instantiations
+        $enabled = static::$enabled;
+
+        parent::__construct($settings, $client, $uuid);
+
+        static::$enabled = $enabled;
+
         $this->eventLogger = new EventLogger($this);
         $this->queryLogger = new QueryLogger();
 
-        parent::__construct($settings, $client, $uuid);
-    }
-
-    public function enable(): self
-    {
-        self::$enabled = true;
-
-        return $this;
-    }
-
-    public function disable(): self
-    {
-        self::$enabled = false;
-
-        return $this;
-    }
-
-    public function enabled(): bool
-    {
-        return self::$enabled;
-    }
-
-    public function disabled(): bool
-    {
-        return ! self::$enabled;
     }
 
     public function showEvents($callable = null): self

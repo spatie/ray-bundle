@@ -19,7 +19,7 @@
     ],
     "require": {
         "php": "^7.4|^8.0",
-        "spatie/ray": "dev-master",
+        "spatie/ray": "^1.19",
         "symfony/http-kernel": "^4.0|^5.0"
     },
     "require-dev": {

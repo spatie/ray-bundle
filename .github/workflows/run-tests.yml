@@ -40,6 +40,7 @@ jobs:
         run: |
           composer global require --no-progress --no-scripts --no-plugins symfony/flex ${{ matrix.symfony }}
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+          composer validate --strict --no-check-lock
 
       - name: Execute tests
         run: vendor/bin/phpunit
