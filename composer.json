@@ -24,6 +24,7 @@
     },
     "require-dev": {
         "ext-json": "*",
+        "dama/doctrine-test-bundle": "^6.5",
         "doctrine/orm": "^2.8",
         "friendsofphp/php-cs-fixer": "^2.17",
         "matthiasnoback/symfony-dependency-injection-test": "^4.2",
