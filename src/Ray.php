@@ -25,7 +25,6 @@ class Ray extends BaseRay
 
         $this->eventLogger = new EventLogger($this);
         $this->queryLogger = new QueryLogger();
-
     }
 
     public function showEvents($callable = null): self

@@ -15,5 +15,4 @@ class SpatieRayBundle extends Bundle
 
         return $this->extension;
     }
-
 }

@@ -7,7 +7,6 @@ use Psr\Log\LoggerInterface;
 use Spatie\Ray\Settings\Settings;
 use Spatie\RayBundle\Ray;
 use Spatie\RayBundle\Tests\TestClasses\FakeClient;
-use Spatie\RayBundle\Tests\TestClasses\Kernel;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class RayTest extends KernelTestCase
