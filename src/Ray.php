@@ -6,7 +6,9 @@ use Composer\InstalledVersions;
 use Spatie\Ray\Client;
 use Spatie\Ray\Ray as BaseRay;
 use Spatie\Ray\Settings\Settings;
+use Spatie\RayBundle\Payloads\EmailPayload;
 use Symfony\Component\HttpKernel\Kernel;
+use Symfony\Component\Mime\Email;
 
 class Ray extends BaseRay
 {
@@ -25,6 +27,15 @@ class Ray extends BaseRay
 
         $this->eventLogger = new EventLogger($this);
         $this->queryLogger = new QueryLogger();
+    }
+
+    public function mailable(Email $email): self
+    {
+        $payload = EmailPayload::forEmail($email);
+
+        $this->sendRequest($payload);
+
+        return $this;
     }
 
     public function showEvents($callable = null): self

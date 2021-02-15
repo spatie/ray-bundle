@@ -19,7 +19,7 @@
     ],
     "require": {
         "php": "^7.4|^8.0",
-        "spatie/ray": "dev-master",
+        "spatie/ray": "^1.19",
         "symfony/config": "^5.2",
         "symfony/dependency-injection": "^5.2",
         "symfony/http-kernel": "^4.0|^5.0"
@@ -34,8 +34,12 @@
         "phpunit/phpunit": "^9.5",
         "psalm/plugin-symfony": "^2.1",
         "spatie/phpunit-snapshot-assertions": "^4.2",
+        "symfony/mailer": "^5.2",
         "symfony/phpunit-bridge": "^5.2",
         "vimeo/psalm": "^4.3"
+    },
+    "suggest": {
+        "symfony/mailer": "If you want to use mailer()"
     },
     "autoload": {
         "psr-4": {
