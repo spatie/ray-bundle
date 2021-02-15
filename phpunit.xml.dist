@@ -1,39 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit backupGlobals="false"
-         backupStaticAttributes="false"
-         bootstrap="vendor/autoload.php"
-         colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         processIsolation="false"
-         stopOnFailure="false"
-         verbose="true"
->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd" bootstrap="vendor/autoload.php"
+         colors="true" verbose="true">
+    <coverage includeUncoveredFiles="true" processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">src/</directory>
+        </include>
+    </coverage>
     <php>
-        <env name="KERNEL_CLASS" value="Spatie\RayBundle\Tests\TestClasses\Kernel" />
-        <env name="APP_ENV" value="test" />
-        <env name="SYMFONY_DEPRECATIONS_HELPER" value="disabled" />
+        <server name="KERNEL_CLASS" value="Spatie\RayBundle\Tests\TestClasses\Kernel" />
+        <server name="SYMFONY_DEPRECATIONS_HELPER" value="weak" />
     </php>
     <testsuites>
-        <testsuite name="Spatie Test Suite">
+        <testsuite name="Spatie Ray Bundle Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
     <extensions>
         <extension class="DAMA\DoctrineTestBundle\PHPUnit\PHPUnitExtension"/>
     </extensions>
-    <coverage>
-        <include>
-            <directory suffix=".php">./src</directory>
-        </include>
-        <report>
-            <html outputDirectory="build/coverage"/>
-            <text outputFile="build/coverage.txt"/>
-            <clover outputFile="build/logs/clover.xml"/>
-        </report>
-    </coverage>
-    <logging>
-        <junit outputFile="build/report.junit.xml"/>
-    </logging>
 </phpunit>
+
