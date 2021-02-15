@@ -3,7 +3,10 @@
 namespace Spatie\RayBundle\Tests;
 
 use Nyholm\BundleTest\BaseBundleTestCase;
+use Spatie\Ray\Settings\Settings;
+use Spatie\RayBundle\Ray;
 use Spatie\RayBundle\SpatieRayBundle;
+use Spatie\RayBundle\Tests\TestClasses\Kernel;
 
 class SpatieRayBundleTest extends BaseBundleTestCase
 {
@@ -28,6 +31,9 @@ class SpatieRayBundleTest extends BaseBundleTestCase
         self::assertSame(23517, $settings['port']);
         self::assertNull($settings['remote_path']);
         self::assertNull($settings['local_path']);
+
+        self::assertInstanceOf(Ray::class, $container->get('spatie_ray.ray'));
+        self::assertInstanceOf(Settings::class, $container->get('spatie_ray.settings'));
     }
 
     /** @test */
@@ -50,5 +56,9 @@ class SpatieRayBundleTest extends BaseBundleTestCase
         self::assertSame(1, $settings['port']);
         self::assertNull($settings['remote_path']);
         self::assertNull($settings['local_path']);
+
+        self::assertInstanceOf(Ray::class, $container->get('spatie_ray.ray'));
+        self::assertInstanceOf(Settings::class, $container->get('spatie_ray.settings'));
+
     }
 }
