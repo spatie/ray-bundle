@@ -5,12 +5,13 @@
         https://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="Spatie\Ray\Settings\Settings" alias="spatie.ray.settings"/>
-        <service id="spatie.ray.settings" class="Spatie\Ray\Settings\Settings">
-            <argument type="collection" id="ray.settings"/>
+        <service id="Spatie\Ray\Settings\Settings" alias="spatie_ray.settings"/>
+        <service id="spatie_ray.settings" class="Spatie\Ray\Settings\Settings">
+            <argument type="collection" id="spatie_ray.settings"/>
         </service>
-        <service id="spatie_ray" class="Spatie\RayBundle\Ray">
-            <argument type="service" id="spatie.ray.settings" />
+        <service id="Spatie\RayBundle\Ray" alias="spatie_ray.ray"/>
+        <service id="spatie_ray.ray" class="Spatie\RayBundle\Ray">
+            <argument type="service" id="spatie_ray.settings" />
         </service>
     </services>
 </container>
